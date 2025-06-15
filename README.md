@@ -1,8 +1,6 @@
 # Parallel Network Ping Scanner
 This Python script is designed to **map active devices on a local network** using parallel pinging. It performs a **fast and concurrent ICMP scan** over a specified IP range and stops after a fixed timeout (10 seconds by default). Only devices that respond to ping within that time window are shown.
 
----
-
 ## 📌 Features
 - Parallel ping scanning using multithreading
 - Stops automatically after 10 seconds
