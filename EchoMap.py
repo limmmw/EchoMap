@@ -22,7 +22,7 @@ def show_banner():
     """
     print(monster_green + banner + reset)
 
-# Konfigurasi
+# Configuration
 base_ip = "192.168.100."
 ip_range = range(1, 255)
 thread_limit = 100
@@ -32,10 +32,8 @@ timeout_seconds = 10
 YELLOW = "\033[93m"
 RESET = "\033[0m"
 
-# Untuk menyimpan IP yang aktif
 active_ips = []
 
-# Fungsi ping
 def ping(ip):
     try:
         result = subprocess.run(
@@ -52,21 +50,17 @@ if __name__ == "__main__":
     show_banner()
     print(f"[i] start to ping from {base_ip}1 - {base_ip}254 in {timeout_seconds} seconds...\n")
 
-    # Mulai semua tugas
     with concurrent.futures.ThreadPoolExecutor(max_workers=thread_limit) as executor:
         futures = {executor.submit(ping, f"{base_ip}{i}"): f"{base_ip}{i}" for i in ip_range}
 
-        # Tunggu 10 detik penuh
         time.sleep(timeout_seconds)
 
-        # Setelah itu, ambil hanya hasil yang sudah selesai
         for future in futures:
             if future.done():
                 result = future.result()
                 if result:
                     active_ips.append(result)
 
-    # Tampilkan hasil
     print(f"\n{YELLOW}=== Active IP/Device ==={RESET}")
     for ip in active_ips:
         print(f"{YELLOW}{ip} active{RESET}")
