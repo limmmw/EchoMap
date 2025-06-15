@@ -67,7 +67,7 @@ You can adjust the target IP range and subnet directly in the script:
    ```python
    sudo nano /usr/bin/EchoMap.sh
    ## write down this scripting
-   sudo python3 /yourpath/EchoMap/EchoMap.py
+   sudo python3 /home/<user>/<yourpath>/EchoMap/EchoMap.py # <user> & <yourpath> adjust to your user directory and where you saved the EchoMap directory
    ## save and you can run the script anywhere with:
    sudo bash EchoMap.sh
 
