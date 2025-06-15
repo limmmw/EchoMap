@@ -57,7 +57,7 @@ You can adjust the target IP range and subnet directly in the script:
              Developed by limmmw
 
    [i] start to ping from 192.168.100.1 - 192.168.100.254 in 10 seconds...
-   === IP Aktif ===
+   === Active IP/Device ===
    192.168.100.1 active
    192.168.100.5 active
    192.168.100.23 active
