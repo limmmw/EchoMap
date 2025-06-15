@@ -4,7 +4,7 @@ import time
 import os
 
 def show_banner():
-    monster_green = "\033[1;92m"
+    monster_green = "\033[38;2;255;76;76m"
     reset = "\033[0m"
     banner = r"""
 
@@ -56,11 +56,11 @@ if __name__ == "__main__":
 
         concurrent.futures.wait(futures, timeout=timeout_seconds)
 
-    YELLOW = "\033[93m"
+    YELLOW = "\033[38;2;206;255;0m"
     RESET = "\033[0m"
 
     print(f"\n{YELLOW}=== Active IP/Device ==={RESET}")
     for ip in active_ips:
         print(f"{YELLOW}[+]Active {ip} {RESET}")
 
-    print(f"\n{YELLOW}Total Active: {len(active_ips)} IP{RESET}")
+    print(f"\nTotal Active: {len(active_ips)} IP/Device")
