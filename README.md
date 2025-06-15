@@ -34,7 +34,7 @@ You can adjust the target IP range and subnet directly in the script:
 
 2. Download:
    ```python
-   git clone https://github.com/limmmw/continuous-ping.git
+   git clone https://github.com/limmmw/EchoMap.git
    cd EchoMap
 
 3. run:
