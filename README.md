@@ -66,9 +66,9 @@ You can adjust the target IP range and subnet directly in the script:
 5. if you want to run the program anywhere, make this configuration:
    ```python
    sudo nano /usr/bin/EchoMap.sh
-   ## write down this scripting program
+   ## write down this scripting
    sudo python3 /yourpath/EchoMap/EchoMap.py
-   ## save and you can run the program anywhere with:
+   ## save and you can run the script anywhere with:
    sudo bash EchoMap.sh
 
 ## 📁 Output
