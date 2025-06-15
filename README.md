@@ -39,7 +39,7 @@ You can adjust the target IP range and subnet directly in the script:
 
 3. run:
    ```python
-   echomap.py
+   python3 EchoMap.py
 
 4. Example Output:
    ```python
