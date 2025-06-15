@@ -61,6 +61,6 @@ if __name__ == "__main__":
 
     print(f"\n{YELLOW}=== Active IP/Device ==={RESET}")
     for ip in active_ips:
-        print(f"{YELLOW}🟢 Active {ip} {RESET}")
+        print(f"{YELLOW}[+]Active {ip} {RESET}")
 
     print(f"\n{YELLOW}Total Active: {len(active_ips)} IP{RESET}")
