@@ -53,7 +53,7 @@ def ping(ip):
 
 if __name__ == "__main__":
     show_banner()
-    print(f"[i] Start ping from {base_ip}1 to {base_ip}254 using {thread_limit} threads...\n")
+    print(f"[i] Start scanning from {base_ip}1 to {base_ip}254 using {thread_limit} threads...\n")
 
     start_time = time.time()
 
