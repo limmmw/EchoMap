@@ -26,11 +26,7 @@ def show_banner():
 base_ip = "192.168.100."
 ip_range = range(1, 255)
 thread_limit = 100
-timeout_seconds = 10
-
-# ANSI colors
-YELLOW = "\033[93m"
-RESET = "\033[0m"
+timeout_seconds = 20
 
 active_ips = []
 
@@ -42,27 +38,29 @@ def ping(ip):
             stderr=subprocess.DEVNULL
         )
         if result.returncode == 0:
-            return ip
+            active_ips.append(ip)
     except:
-        return None
+        pass
 
 if __name__ == "__main__":
     show_banner()
     print(f"[i] start to ping from {base_ip}1 - {base_ip}254 in {timeout_seconds} seconds...\n")
 
+    start_time = time.time()
+
     with concurrent.futures.ThreadPoolExecutor(max_workers=thread_limit) as executor:
-        futures = {executor.submit(ping, f"{base_ip}{i}"): f"{base_ip}{i}" for i in ip_range}
+        futures = []
+        for i in ip_range:
+            ip = f"{base_ip}{i}"
+            futures.append(executor.submit(ping, ip))
 
-        time.sleep(timeout_seconds)
+        concurrent.futures.wait(futures, timeout=timeout_seconds)
 
-        for future in futures:
-            if future.done():
-                result = future.result()
-                if result:
-                    active_ips.append(result)
+    YELLOW = "\033[93m"
+    RESET = "\033[0m"
 
     print(f"\n{YELLOW}=== Active IP/Device ==={RESET}")
     for ip in active_ips:
-        print(f"{YELLOW}{ip} active{RESET}")
+        print(f"{YELLOW}🟢 Active {ip} {RESET}")
 
-    print(f"\nTotal Active: {len(active_ips)} IP")
+    print(f"\n{YELLOW}Total Active: {len(active_ips)} IP{RESET}")
