@@ -6,7 +6,7 @@ import platform
 from queue import Queue
 
 def show_banner():
-    monster_green = "\033[38;2;255;76;76m"
+    monster_green = "\033[1;31m"
     reset = "\033[0m"
     banner = r"""
 
