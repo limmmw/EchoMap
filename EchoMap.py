@@ -25,7 +25,7 @@ def show_banner():
     print(monster_green + banner + reset)
 
 # Configuration
-base_ip = "192.168.100."
+base_ip = "10.149.186."
 ip_range = range(1, 255)
 thread_limit = 100
 ping_timeout = 2  # timeout per ping (in seconds)
